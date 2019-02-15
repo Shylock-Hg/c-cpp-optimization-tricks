@@ -10,7 +10,7 @@ prefix = /usr/local
 
 PPFLAGS = -MT $@ -MMD -MP -MF $(patsubst %.o, %.d, $@)
 
-CFLAGS_LOCAL = -Wall -g -std=c++17 -coverage
+CFLAGS_LOCAL = -Wall -g -std=c++11 -coverage
 CFLAGS_LOCAL += $(CFLAGS)
 
 APP_SOURCES = $(wildcard *.cc)
