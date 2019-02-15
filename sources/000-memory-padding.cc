@@ -79,6 +79,7 @@ struct nested_struct {
 // In all every where the memory pad various-size items continuously.
 
 int main(int argc, char * argv[]) {
+    /*
     std::clog << "Size of unoptimized_class is " << sizeof(unoptimized_class);
     std::clog << std::endl << "Size of optimized_class is " << sizeof(optimized_class) << std::endl;
     std::clog << "Size of nested_class is " << sizeof(nested_class) << std::endl;
@@ -88,5 +89,13 @@ int main(int argc, char * argv[]) {
     std::clog << "Size of unoptimized_struct is " << sizeof(unoptimized_struct) << std::endl;
     std::clog << "Size of optimized_struct is " << sizeof(optimized_struct) << std::endl;
     std::clog << "Size of nested_struct is " << sizeof(nested_struct) << std::endl;
+    */
+    static_assert(sizeof(unoptimized_class) == 12);
+    static_assert(sizeof(optimized_class) == 8);
+    static_assert(sizeof(nested_class) == 12);
+
+    static_assert(sizeof(unoptimized_struct) == 12);
+    static_assert(sizeof(optimized_struct) == 8);
+    static_assert(sizeof(nested_struct) == 20);
     return 0;
 }
