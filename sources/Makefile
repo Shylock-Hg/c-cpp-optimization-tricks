@@ -32,7 +32,7 @@ $(DIR_BUILD)/%.d : ;
 $(DIR_BUILD) :
 	$(MKDIR) -p $@
 
-test :
+test : all
 	for app in $(APPS); do ./$(DIR_BUILD)/$${app}; done
 
 clean :
