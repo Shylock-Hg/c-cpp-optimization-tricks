@@ -22,3 +22,4 @@ Tricks List
 
 000. Memory Padding
 001. Restrict Modifier
+003. Tail Function Optimization
