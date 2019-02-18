@@ -47,6 +47,9 @@ void* memcpy(void * __restrict dest, void * __restrict src, std::size_t n) {
 }
 
 int main(int argc, char * argv[]) {
+    std::clog << std::endl << std::endl;
+    std::clog << "001-restrict-modifier" << std::endl;
+
     int a,b;
     std::clog << add(&a, &b) << std::endl;
     std::clog << radd(&a, &b) << std::endl;
