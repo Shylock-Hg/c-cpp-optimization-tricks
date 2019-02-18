@@ -22,3 +22,4 @@ Tricks List
 
 000. Memory Padding
 001. Restrict Modifier
+002. Inline or Macro Function
