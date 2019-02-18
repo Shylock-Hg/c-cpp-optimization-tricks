@@ -90,6 +90,8 @@ int main(int argc, char * argv[]) {
     std::clog << "Size of optimized_struct is " << sizeof(optimized_struct) << std::endl;
     std::clog << "Size of nested_struct is " << sizeof(nested_struct) << std::endl;
     */
+    std::clog << std::endl << std::endl;
+    std::clog << "000-memory-padding" << std::endl;
     static_assert(sizeof(unoptimized_class) == 12, "Unexpected padding!");
     static_assert(sizeof(optimized_class) == 8, "Unexpected padding!");
     static_assert(sizeof(nested_class) == 12, "Unexpected padding!");
