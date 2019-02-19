@@ -28,3 +28,4 @@ Tricks List
 
 003. Tail Function Optimization
 
+006. Conditional Branch Prediction
