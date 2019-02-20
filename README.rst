@@ -31,3 +31,5 @@ Tricks List
 004. Noexcept
 
 007. Bit Operator
+
+008. Constexpr
