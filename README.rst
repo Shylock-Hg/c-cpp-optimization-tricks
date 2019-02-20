@@ -29,3 +29,5 @@ Tricks List
 003. Tail Function Optimization
 
 004. Noexcept
+
+007. Bit Operator
