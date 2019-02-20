@@ -30,4 +30,6 @@ Tricks List
 
 004. Noexcept
 
+005. Continuous Memory
+
 007. Bit Operator
