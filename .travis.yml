@@ -158,9 +158,9 @@ before_install:
     - eval "${MATRIX_EVAL}"
 
 script :
-    - make -C ./sources -j$(nproc)
-    - make -C ./sources test
-    - make -C ./sources clean
+    - make -j$(nproc)
+    - make test
+    - make clean
 
 after_success:
     #- coveralls --exclude=test.c --gcov-options='\-lp'
