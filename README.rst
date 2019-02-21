@@ -35,3 +35,5 @@ Tricks List
 006. Conditional Branch Prediction
 
 007. Bit Operator
+
+009. Emplace API
