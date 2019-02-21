@@ -28,4 +28,10 @@ Tricks List
 
 003. Tail Function Optimization
 
+004. Noexcept
+
+005. Continuous Memory
+
 006. Conditional Branch Prediction
+
+007. Bit Operator
