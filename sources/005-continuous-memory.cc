@@ -21,7 +21,7 @@ struct uPerson
     // The name string stored in another area (often in heap)
     // So when cpu access name string maybe need to access from memory instead
     // of cache for cache missing.
-    // And this will consume more one pointer memory(2B).
+    // And this will consume more one pointer memory.
     char * name;
     int age;
 };
@@ -35,3 +35,7 @@ int main(int argc, char * argv[]) {
     std::clog << "005 continuous memory" << std::endl;
     return 0;
 }
+
+// Appendx
+// The *inline* function introduced before also reflect the Principle of
+// Locality in instructions fetcing.
