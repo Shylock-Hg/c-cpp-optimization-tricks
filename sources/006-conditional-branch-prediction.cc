@@ -32,7 +32,7 @@ void pp_cond_pred(std::uint32_t num) {
     } else if (num > 1024) [[unlikely]] {
         std::clog << "Less likely!" << std::endl;
     } else { // normal possible
-         std::clog << "Normal likely!" << std::endl;
+        std::clog << "Normal likely!" << std::endl;
     }
 }
 
