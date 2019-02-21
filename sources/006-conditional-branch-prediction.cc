@@ -7,8 +7,8 @@
 // There are Conditional Branch Prediction feature in two way:
 
 // 0. Compiler Extension:
-#define likely(bexpr)   __builtin_expect((bexpr), 1)
-#define unlikely(bexpr) __builtin_expect((bexpr), 0)
+#define likely(bexpr)   __builtin_expect(!!(bexpr), 1)
+#define unlikely(bexpr) __builtin_expect(!!(bexpr), 0)
 // In fact, *__builtin_expected* can do more value prediction optimization
 // than just condition.
 #include <cstdint>
