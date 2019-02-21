@@ -37,3 +37,5 @@ Tricks List
 007. Bit Operator
 
 008. Constexpr
+
+009. Emplace API
