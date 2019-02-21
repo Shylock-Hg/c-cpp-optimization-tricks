@@ -32,4 +32,6 @@ Tricks List
 
 005. Continuous Memory
 
+006. Conditional Branch Prediction
+
 007. Bit Operator
