@@ -19,7 +19,7 @@ struct String {
 };
 
 // We can see the buf[0] don't consumpt memory in fact
-static_assert(sizeof(String) == 2*sizeof(size_t));
+static_assert(sizeof(String) == 2*sizeof(size_t), "Expect sizeof assert!");
 
 int main(int argc, char * argv[]) {
     std::clog << std::endl << std::endl;
