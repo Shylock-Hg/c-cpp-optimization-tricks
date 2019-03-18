@@ -39,3 +39,6 @@ Tricks List
 008. Constexpr
 
 009. Emplace API
+
+010. Empty Array In Struct
+
