@@ -1,5 +1,5 @@
-#include <cstdint>
 #include <cassert>
+#include <cstdint>
 
 #include <iostream>
 
@@ -31,7 +31,7 @@ std::uint32_t ofib(std::uint32_t n, std::uint32_t a = 0, std::uint32_t b = 1) {
     return ofib(n - 1, b, a + b);  //!< can optimize fib(n - 1, b, a + b)
 }
 
-int main(int argc, char * argv[]) {
+int main(int argc, char* argv[]) {
     std::clog << std::endl << std::endl;
     std::clog << "003-tail-recursion-optimization" << std::endl;
 
