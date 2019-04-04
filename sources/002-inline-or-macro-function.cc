@@ -1,7 +1,7 @@
 #include <cassert>
 
-#include <stdexcept>
 #include <iostream>
+#include <stdexcept>
 
 // The *inline* keyword is added to standard from C99
 
@@ -18,15 +18,11 @@
 // can determine the all information about inline function and its arguments,
 // and Sementic Inline will not works when requirements is not statisfied.
 
-inline int iadd(int a, int b) {
-    return a + b;
-}
+inline int iadd(int a, int b) { return a + b; }
 
 // \WARN Modern compiler will consider to inline code even
 //       without *inline* keyword when the function is time-consumption-less.
-int add(int a, int b) {
-    return a + b;
-}
+int add(int a, int b) { return a + b; }
 
 // Apply *inline* to recursive function is UB(undefined behavior)
 // For modern compiler,some apply Sementic Inline to several deepth,
@@ -49,12 +45,10 @@ inline int fib(int n) {
 // Virtual Function: Possible to Sementic Inline when compiler know the actual
 // type of object(In fact know function) and arguments.
 class test {
-public:
-    inline test() {};
-    inline ~test() {};
-    inline virtual void hello() {
-        std::clog << "Hello World!" << std::endl;
-    }
+   public:
+    inline test(){};
+    inline ~test(){};
+    inline virtual void hello() { std::clog << "Hello World!" << std::endl; }
 };
 // In fact, the functions defined in header in c++ are automatic Syntax Inline
 // for avoiding link-time multi-defined error.
@@ -68,26 +62,26 @@ public:
 // Lexical Scope Isolation.
 #define madd(a, b) ((a) + (b))
 
-int main(int argc, char * argv[]) {
+int main(int argc, char* argv[]) {
     std::clog << std::endl << std::endl;
     std::clog << "002-inline-or-macro-function" << std::endl;
 
     // in fact, std::clog << 2 + 3 << std::endl;
     // without function calling.
-    assert(5 == iadd(2 ,3));
-    //std::clog << iadd(2, 3) << std::endl;
+    assert(5 == iadd(2, 3));
+    // std::clog << iadd(2, 3) << std::endl;
 
     // Call function if without inline
-    assert(5 == add(2 ,3));
-    //std::clog << add(2, 3) << std::endl;
+    assert(5 == add(2, 3));
+    // std::clog << add(2, 3) << std::endl;
 
     // Replace to (2 + 3) in fact.
-    assert(5 == madd(2 ,3));
-    //std::clog << madd(2, 3) << std::endl;
+    assert(5 == madd(2, 3));
+    // std::clog << madd(2, 3) << std::endl;
 
     // Nice guy make it works well.
     assert(3 == fib(4));
-    //std::clog << fib(4) << std::endl;
+    // std::clog << fib(4) << std::endl;
 
     return 0;
 }

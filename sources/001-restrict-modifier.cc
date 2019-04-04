@@ -19,13 +19,13 @@
 // pointer is the only way to acess the resource and apply *restrict* keyword,
 // the compiler could omit the reload operation.
 
-int add(int * a, int * b) {
+int add(int* a, int* b) {
     *a = 3;
     *b = 4;
     return *a + *b;  //!< Not always 7, can be 8 when a can equals to b
 }
 
-int radd(int * __restrict a, int * __restrict b) {
+int radd(int* __restrict a, int* __restrict b) {
     *a = 3;
     *b = 4;
     return *a + *b;  //!< here we can even evaluate the value in compile-time
@@ -36,7 +36,7 @@ int radd(int * __restrict a, int * __restrict b) {
 //       lifetime (this function scope), it's the only way to access this.
 //       (Maybe not OK in multi-threads process)
 //       So we can apply *restrict* to the parameter pointer.
-void* memcpy(void * __restrict dest, void * __restrict src, std::size_t n) {
+void* memcpy(void* __restrict dest, void* __restrict src, std::size_t n) {
     if (NULL == dest || NULL == src || 0 == n) {
         return NULL;
     }
@@ -46,11 +46,11 @@ void* memcpy(void * __restrict dest, void * __restrict src, std::size_t n) {
     return dest;
 }
 
-int main(int argc, char * argv[]) {
+int main(int argc, char* argv[]) {
     std::clog << std::endl << std::endl;
     std::clog << "001-restrict-modifier" << std::endl;
 
-    int a,b;
+    int a, b;
     std::clog << add(&a, &b) << std::endl;
     std::clog << radd(&a, &b) << std::endl;
     std::clog << add(&a, &a) << std::endl;

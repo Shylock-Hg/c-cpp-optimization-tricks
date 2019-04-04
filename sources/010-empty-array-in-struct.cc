@@ -6,9 +6,9 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <cstdio>
 #include <cstdlib>
 #include <cstring>
-#include <cstdio>
 
 #include <iostream>
 
@@ -19,14 +19,14 @@ struct String {
 };
 
 // We can see the buf[0] don't consumpt memory in fact
-static_assert(sizeof(String) == 2*sizeof(size_t), "Expect sizeof assert!");
+static_assert(sizeof(String) == 2 * sizeof(size_t), "Expect sizeof assert!");
 
-int main(int argc, char * argv[]) {
+int main(int argc, char* argv[]) {
     std::clog << std::endl << std::endl;
     std::clog << "010 empty array in struct" << std::endl;
 
     //                       header    + real string
-    String * s = reinterpret_cast<String*>(malloc(sizeof(String) + 32));
+    String* s = reinterpret_cast<String*>(malloc(sizeof(String) + 32));
     s->cap = 32;
     s->len = 0;
 
@@ -48,4 +48,3 @@ int main(int argc, char * argv[]) {
 // Tow resons:
 // 1. One more pointer memory consumption
 // 2. Better Locality in one whole memory block instead of two seprated blocks.
-

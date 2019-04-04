@@ -16,9 +16,7 @@
 
 #include <iostream>
 
-int add(int a, int b) noexcept {
-    return a + b;
-}
+int add(int a, int b) noexcept { return a + b; }
 static_assert(true == noexcept(add(1, 2)), "Except assert failed!");
 
 //!< determine when specified template
@@ -30,22 +28,19 @@ T tadd(T a, T b) noexcept(noexcept(T(a))) {
 static_assert(true == noexcept(tadd(1, 2)), "Except assert failed!");
 
 class test {
-private:
+   private:
     std::size_t i_;
-public:
-    static void except() {
-        throw "Hello!";
-    }
 
-    void inc() noexcept {
-        i_++;
-    }
+   public:
+    static void except() { throw "Hello!"; }
+
+    void inc() noexcept { i_++; }
 };
 static_assert(false == noexcept(test::except()), "Except assert failed!");
 
 #include <string>
 
-int main(int argc, char * argv[]) {
+int main(int argc, char* argv[]) {
     std::clog << std::endl << std::endl;
     std::clog << "004-noexcept" << std::endl;
 
@@ -57,7 +52,6 @@ int main(int argc, char * argv[]) {
     assert(false == noexcept(tadd(s1, s2)));  //!< here false
     return 0;
 }
-
 
 // reference
 // [0]. https://isocpp.org/blog/2014/09/noexcept-optimization

@@ -8,29 +8,26 @@
 // But this always reduce the flexibility of programming.
 
 // Continuous memory strcuture
-struct Person
-{
+struct Person {
     char name[16];
     int age;
 };
 static_assert(20 == sizeof(Person), "size assert error!");
 
 // Uncontinous memory structure
-struct uPerson
-{
+struct uPerson {
     // The name string stored in another area (often in heap)
     // So when cpu access name string maybe need to access from memory instead
     // of cache for cache missing.
     // And this will consume more one pointer memory.
-    char * name;
+    char* name;
     int age;
 };
 static_assert(16 == sizeof(uPerson), "size assert error!");
 
-
 #include <iostream>
 
-int main(int argc, char * argv[]) {
+int main(int argc, char* argv[]) {
     std::clog << std::endl << std::endl;
     std::clog << "005 continuous memory" << std::endl;
     return 0;
