@@ -44,3 +44,4 @@ Tricks List
 
 011. Function calling
 
+012. Auto vectorized
