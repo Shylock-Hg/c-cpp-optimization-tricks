@@ -53,6 +53,7 @@ auto doNotOptimizeAway(const T& datum) -> typename std::enable_if<
 /// parallel executing.
 /// For more infomation, could check the auto-vectorized manual of clang in
 /// https://llvm.org/docs/Vectorizers.html#auto-vectorization-in-llvm
+/// See the compiled program in https://godbolt.org/z/z45zsW8aq
 int main() {
     int a[] = {1, 2, 3, 4, 5, 6, 7, 8};
     int b[] = {1, 2, 3, 4, 5, 6, 7, 8};
